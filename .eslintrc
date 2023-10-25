@@ -1,0 +1,6 @@
+{
+  "extends": "@callstack",
+  "rules": {
+    "promise/always-return": "off"
+  }
+}
