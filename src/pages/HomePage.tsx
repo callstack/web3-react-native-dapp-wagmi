@@ -23,7 +23,11 @@ export default function HomePage() {
     formatUnits: 'ether',
   });
   const { address, isConnected } = useAccount();
-  const { data: balance } = useBalance({ address });
+  const { data: balance } = useBalance({
+    address,
+    chainId: chain?.id,
+    formatUnits: 'ether',
+  });
   const { data: signedHash, signMessage } = useSignMessage({
     message: 'Sign this message to prove you are the owner of this wallet',
   });
@@ -31,7 +35,7 @@ export default function HomePage() {
   // Send test MATIC on Polygon Mumbai testnet
   const { config } = usePrepareSendTransaction({
     chainId: polygonMumbai.id,
-    to: 'YOUR ADDRESS HERE',
+    to: 'RECEIVER ADDRESS HERE',
     value: parseEther('0.001'),
   });
   const { data: txData, sendTransaction } = useSendTransaction(config);
@@ -77,6 +81,7 @@ export default function HomePage() {
           <View style={styles.block}>
             <Button
               title="Send 0.001 MATIC"
+              disabled={chain.id !== polygonMumbai.id}
               onPress={() => sendTransaction()}
             />
           </View>
