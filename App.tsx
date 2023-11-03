@@ -1,13 +1,15 @@
-import './polyfills';
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { WagmiConfig } from 'wagmi';
-import { mainnet, polygon, arbitrum, polygonMumbai } from 'wagmi/chains';
 import {
   createWeb3Modal,
   defaultWagmiConfig,
   Web3Modal,
 } from '@web3modal/wagmi-react-native';
+
+// ⚠️ Important: `@web3modal/wagmi-react-native` needs to be imported before other `wagmi` packages.
+// This is because Web3Modal has a polyfill necessary for the TextEncoder API.
+import { WagmiConfig } from 'wagmi';
+import { mainnet, polygon, arbitrum, polygonMumbai } from 'wagmi/chains';
 import HomePage from './src/pages/HomePage';
 
 // ⚠️ Be careful: in production apps, your WalletConnect Cloud project ID should be properly secured,
