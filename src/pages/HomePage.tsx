@@ -1,28 +1,14 @@
 import React from 'react';
 import { W3mButton } from '@web3modal/wagmi-react-native';
 import { StyleSheet, Text, View } from 'react-native';
-import {
-  useAccount,
-  useBalance,
-  useBlockNumber,
-  useFeeData,
-  useNetwork,
-} from 'wagmi';
+import { useAccount, useBalance, useBlockNumber, useFeeData } from 'wagmi';
 import WalletActions from '../components/WalletActions';
 
 export default function HomePage() {
-  const { chain } = useNetwork();
   const { data: blockNumber } = useBlockNumber();
-  const { data: feeData } = useFeeData({
-    chainId: chain?.id,
-    formatUnits: 'ether',
-  });
+  const { data: feeData } = useFeeData({ formatUnits: 'ether' });
   const { address, isConnected } = useAccount();
-  const { data: balance } = useBalance({
-    address,
-    chainId: chain?.id,
-    formatUnits: 'ether',
-  });
+  const { data: balance } = useBalance({ address, formatUnits: 'ether' });
 
   return (
     <View style={styles.container}>
