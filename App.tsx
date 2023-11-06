@@ -12,9 +12,6 @@ import { WagmiConfig } from 'wagmi';
 import { mainnet, polygon, arbitrum, polygonMumbai } from 'wagmi/chains';
 import HomePage from './src/pages/HomePage';
 
-// ⚠️ Be careful: in production apps, your WalletConnect Cloud project ID should be properly secured,
-// and not exposed to the client like we're doing in this example with the EXPO_PUBLIC environment variables.
-// For more information on how to secure your secrets, read https://reactnative.dev/docs/security#storing-sensitive-info
 const projectId = process.env.EXPO_PUBLIC_WALLETCONNECT_CLOUD_PROJECT_ID;
 
 // Metadata to show about the dApp when deep-linking to the wallet
