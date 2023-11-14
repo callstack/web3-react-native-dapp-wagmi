@@ -1,3 +1,6 @@
+// ⚠️ Important: `@walletconnect/react-native-compat` needs to be imported before other `wagmi` packages.
+// This is because Web3Modal has a polyfill necessary for the TextEncoder API.
+import '@walletconnect/react-native-compat';
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {
@@ -5,9 +8,6 @@ import {
   defaultWagmiConfig,
   Web3Modal,
 } from '@web3modal/wagmi-react-native';
-
-// ⚠️ Important: `@web3modal/wagmi-react-native` needs to be imported before other `wagmi` packages.
-// This is because Web3Modal has a polyfill necessary for the TextEncoder API.
 import { WagmiConfig } from 'wagmi';
 import { mainnet, polygon, arbitrum, polygonMumbai } from 'wagmi/chains';
 import HomePage from './src/pages/HomePage';
