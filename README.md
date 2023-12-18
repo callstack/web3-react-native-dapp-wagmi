@@ -2,6 +2,8 @@
 
 This repository showcases how to build a modern web3 dApp with React Native, [wagmi](https://wagmi.sh) and [WalletConnect's Web3Modal](https://docs.walletconnect.com/web3modal/react-native/about)
 
+Read the article for a more detailed explanation: [Best DX for React Native Web3 dApps With Web3Modal and Wagmi](https://www.callstack.com/blog/best-dx-for-react-native-web3-dapps-with-web3modal-and-wagmi)
+
 ## Requirements
 
 - [Expo environment setup](https://docs.expo.dev/get-started/installation/#requirements) (Node.js, Git, Watchman)
